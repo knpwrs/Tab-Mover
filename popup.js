@@ -1,5 +1,6 @@
-// Input element
-var queryBox = document.getElementById('query');
+// Input elements
+var queryBox = document.getElementById('query'),
+    property = document.getElementById('property');
 
 // Listen for clicks on the new window button
 document.getElementById('new-window').addEventListener('click', function (e) {
@@ -29,7 +30,7 @@ function getMatchingTabs(query, callback) {
   var matches = [];
   chrome.tabs.getAllInWindow(null, function (tabs) {
     for (var i = 0; i < tabs.length; i++) {
-      if (re.test(tabs[i].url)) {
+      if (re.test(tabs[i][property.value])) {
         matches.push(tabs[i].id);
       }
     }

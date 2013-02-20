@@ -2,12 +2,16 @@
 <head>
   <style>
     body {
-      width: 350px;
+      width: 450px;
     }
   </style>
 </head>
 <body>
   <input type="text" id="query" placeholder="Query" />
+  <select id="property">
+    <option value="url">URL</option>
+    <option value="title">Title</option>
+  </select>
   <input type="button" id="new-window" value="New Window" />
   <input type="button" id="move-beginning" value="Move to Beginning" />
   <script src="popup.js"></script>
